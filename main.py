@@ -6,7 +6,7 @@ from func import *
 # Function definitions here...
 
 folder_path = "images/backgrounds"
-ss = "ss.png"
+ss = "images/ss.png"
 ssIMG = Image.open(ss)
 
 count1 = 3
