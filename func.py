@@ -20,7 +20,7 @@ def background_p_SS(background, SS, resultname):
     y_position = ((backgroundIMG.height - ssIMG.height) // 2) + b
     position = (x_position, y_position)
     backgroundIMG.paste(ssIMG, position)  # Remove ssIMG from paste() arguments
-    backgroundIMG.resize((224, 224), Image.BICUBIC)
+    backgroundIMG.resize((224, 224))
     backgroundIMG.save(resultname)
     print("Image successfully saved")
 
