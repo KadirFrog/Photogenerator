@@ -26,7 +26,7 @@ for x in range(count1):
             b = random.uniform(0.7, 1.5)
             ssIMG_resized = ssIMG.resize((2000, 1500), Image.BICUBIC)
             ssIMG_brightened = changeBrightness(ssIMG_resized, b)
-            r = random.randint(-5, 5)
+            r = random.randint(-7, 7)
             ssIMG_rotated = rotate(ssIMG_brightened, r)
             saveloc = os.path.join(fp1, str(x))
             os.makedirs(saveloc, exist_ok=True)
