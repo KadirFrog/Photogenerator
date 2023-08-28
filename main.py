@@ -2,12 +2,24 @@ from PIL import Image, ImageEnhance
 import random
 import os
 from func import *
+from zipall import *
 
 folder_path = "images/backgrounds"
 ss = "images/ss.png"
 
 count1 = 3
 fp1 = "generated/"
+a = "generated/-1/"
+
+if not os.path.exists(a):
+    os.makedirs(a)
+count = 0
+for background in os.listdir(folder_path):
+    way = os.path.join(a, str(count) + ".jpg")
+    get = os.path.join(folder_path, background)
+    get = Image.open(get)
+    get.save(way)
+    count += 1
 
 
 for x in range(count1):
@@ -34,3 +46,4 @@ for x in range(count1):
             background_p_SS(img, ssIMG_rotated, rn)
             count2 += 1
 
+zipGenerated(fp1, "generated.zip")
