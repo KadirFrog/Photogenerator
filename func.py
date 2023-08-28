@@ -12,7 +12,7 @@ def background_p_SS(background, SS, resultname):
     backgroundIMG = background.copy()
     backgroundIMG = backgroundIMG.resize((2000, 1500), Image.BICUBIC)
     ssIMG = SS.copy()
-    a = random.randint(-100, 100)
+    a = random.randint(-300, 300)
     ssIMG = ssIMG.resize((700 - a, 700 - a), Image.BICUBIC)
     a = random.randint(-500, 500)
     b = random.randint(-250, 250)
