@@ -13,12 +13,12 @@ fp1 = "generated/"
 for x in range(count1):
     ssIMG = Image.open(ss)
     count2 = 0
-    width, height = ssIMG.size  # Corrected variable name: widgth -> width
-    onewidth = width // count1  # Corrected variable name: onewidght -> onewidth
-    cutwidth1 = x * onewidth  # Corrected variable name: cutwidght1 -> cutwidth1
-    cutwidth2 = (x + 1) * onewidth  # Corrected variable name: cutwidght2 -> cutwidth2
-    upper = 0  # Set upper coordinate
-    cutbox = (cutwidth1, upper, cutwidth2, height)  # Corrected 'lower' to 'height'
+    width, height = ssIMG.size  
+    onewidth = width // count1 
+    cutwidth1 = x * onewidth  
+    cutwidth2 = (x + 1) * onewidth  
+    upper = 0  
+    cutbox = (cutwidth1, upper, cutwidth2, height)  
     ssIMG = cropSS(ssIMG, cutbox)
     for filename in os.listdir(folder_path):
         if os.path.isfile(os.path.join(folder_path, filename)):
