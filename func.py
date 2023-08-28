@@ -10,10 +10,10 @@ def rotate(SS, angle):
 
 def background_p_SS(background, SS, resultname):
     backgroundIMG = background.copy()
-    backgroundIMG = backgroundIMG.resize((2000, 1500), Image.BICUBIC)
+    backgroundIMG = backgroundIMG.resize((2000, 2000), Image.BICUBIC)
     ssIMG = SS.copy()
     a = random.randint(-300, 300)
-    ssIMG = ssIMG.resize((700 - a, 700 - a), Image.BICUBIC)
+    ssIMG = ssIMG.resize((500 - a, 500 - a), Image.BICUBIC)
     a = random.randint(-500, 500)
     b = random.randint(-250, 250)
     x_position = ((backgroundIMG.width - ssIMG.width) // 2) + a 
