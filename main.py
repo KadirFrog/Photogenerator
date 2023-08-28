@@ -3,26 +3,30 @@ import random
 import os
 from func import *
 
-# Function definitions here...
-
 folder_path = "images/backgrounds"
 ss = "images/ss.png"
-ssIMG = Image.open(ss)
 
 count1 = 3
 fp1 = "generated/"
 
+
 for x in range(count1):
+    ssIMG = Image.open(ss)
     count2 = 0
-for x in range(count1):
-    count2 = 0
+    width, height = ssIMG.size  # Corrected variable name: widgth -> width
+    onewidth = width // count1  # Corrected variable name: onewidght -> onewidth
+    cutwidth1 = x * onewidth  # Corrected variable name: cutwidght1 -> cutwidth1
+    cutwidth2 = (x + 1) * onewidth  # Corrected variable name: cutwidght2 -> cutwidth2
+    upper = 0  # Set upper coordinate
+    cutbox = (cutwidth1, upper, cutwidth2, height)  # Corrected 'lower' to 'height'
+    ssIMG = cropSS(ssIMG, cutbox)
     for filename in os.listdir(folder_path):
         if os.path.isfile(os.path.join(folder_path, filename)):
             img = Image.open(os.path.join(folder_path, filename))
             b = random.uniform(0.7, 1.5)
             ssIMG_resized = ssIMG.resize((2000, 1500), Image.BICUBIC)
             ssIMG_brightened = changeBrightness(ssIMG_resized, b)
-            r = random.randint(0, 360)
+            r = random.randint(-10, 10)
             ssIMG_rotated = rotate(ssIMG_brightened, r)
             saveloc = os.path.join(fp1, str(x))
             os.makedirs(saveloc, exist_ok=True)

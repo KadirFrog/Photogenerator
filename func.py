@@ -1,8 +1,9 @@
 from PIL import Image, ImageEnhance
+import random
 
 def rotate(SS, angle):
     ssIMG = SS.copy()  # Make a copy of the image before rotating
-    ssIMG = ssIMG.rotate(angle, expand=True)
+    ssIMG = ssIMG.rotate(angle, expand=True, fillcolor=(100, 0, 0, 0))
     return ssIMG
 
 def background_p_SS(background, SS, resultname):
